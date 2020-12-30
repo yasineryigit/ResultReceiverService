@@ -40,12 +40,13 @@ public class MainActivity extends AppCompatActivity {
         public MyResultReceiver(Handler handler) {
             super(handler);
         }
-        //onReceiveResult ile dönen sonuçkarı handler ile kullanabilir hale getiririz
+        //onReceiveResult ile dönen sonuçları handler ile kullanabilir hale getiririz
         //Handler'lar ile başka thread'de çalışan DownloadService ile MainThread arasında köprü kuruyoruz
         //handler'lar tek başına bir şey ifade etmez, runnable'lar ile ne yapacağını söylüyoruz
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {
             super.onReceiveResult(resultCode, resultData);
+            //gelen data varsa
             if(resultCode==1&&resultData!=null){
                 handler.post(new Runnable() {
                     @Override

@@ -52,7 +52,7 @@ public class DownloadClass extends IntentService {
 
         }catch (Exception e){
             Bundle bundle = new Bundle();
-            bundle.putString("websiteResult","Result dönemedi");
+            bundle.putString("websiteResult","Result failed");
             //buradaki result code permissionlardaki gibi kontrol amaçlı result kod
             resultReceiver.send(1,bundle);
 
